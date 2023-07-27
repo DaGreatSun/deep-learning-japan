@@ -48,3 +48,51 @@ white = np.full([200, 200], 255, dtype=np.uint8)
 # row3 = cv2.hconcat([black, white, black, white])
 # row4 = cv2.hconcat([white, black, white, black])
 # utils.display_concatenated("Chequered Board", [row1, row2, row3, row4], "v")
+
+################################################
+# Blurring & Time Taken
+################################################
+# image = originalImage.copy()
+# start = time.time()
+# blurred = cv2.blur(image, (15, 15))
+# time_blur = time.time()
+# gaussian = cv2.GaussianBlur(image, (15, 15), sigmaX=15, sigmaY=15)
+# time_gaussian = time.time()
+# median = cv2.medianBlur(image, 15)
+# time_median = time.time()
+# bilateral = cv2.bilateralFilter(image, 15, 50, 50)
+# time_bilateral = time.time()
+
+# baseline = time_blur - start
+# print("Blur", (time_blur - start) / baseline)
+# print("Gaussian", (time_gaussian - time_blur) / baseline)
+# print("Median", (time_median - time_gaussian) / baseline)
+# print("Bilateral", (time_bilateral - time_median) / baseline)
+
+################################################
+# Contrast, Brightness, Gamma control
+################################################
+#   convertScaleAbs(reference image, image rewrite target, contrast, brightness)
+################################################
+# more_contrast = originalImage.copy()
+# less_contrast = originalImage.copy()
+# more_brightness = originalImage.copy()
+# less_brightness = originalImage.copy()
+# cv2.convertScaleAbs(originalImage, more_contrast, 2, 0)
+# cv2.convertScaleAbs(originalImage, less_contrast, 0.5, 0)
+# cv2.convertScaleAbs(originalImage, more_brightness, 1, 64)
+# cv2.convertScaleAbs(originalImage, less_brightness, 1, -64)
+# utils.display_concatenated(
+#     "Convert Scale Abs",
+#     [originalImage, more_contrast, less_contrast, more_brightness, less_brightness],
+# )
+
+# image = originalImage.copy()
+# Gamma = 3
+# imageGammaHigher = np.array(255 * (originalImage / 255) ** (1 / Gamma), dtype=np.uint8)
+# Gamma = 0.2
+# imageGammaLower = np.array(255 * (originalImage / 255) ** (1 / Gamma), dtype=np.uint8)
+# utils.display_concatenated(
+#     "Gamma 1.5 vs 0.5",
+#     [originalImage, imageGammaHigher, imageGammaLower],
+# )
