@@ -45,9 +45,7 @@ white = np.full([200, 200], 255, dtype=np.uint8)
 ################################################
 # row1 = cv2.hconcat([black, white, black, white])
 # row2 = cv2.hconcat([white, black, white, black])
-# row3 = cv2.hconcat([black, white, black, white])
-# row4 = cv2.hconcat([white, black, white, black])
-# utils.display_concatenated("Chequered Board", [row1, row2, row3, row4], "v")
+# utils.display_concatenated("Chequered Board", [row1, row2, row1, row2], "v")
 
 ################################################
 # Blurring & Time Taken
