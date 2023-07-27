@@ -6,7 +6,7 @@ import sys
 sys.path.append("../")
 import utils
 
-originalImage = cv2.imread("pedestrian-detection/ped.jpg", cv2.IMREAD_COLOR)
+originalImage = cv2.imread("pedestrian-detection/street.jpg", cv2.IMREAD_COLOR)
 
 # Prepare the hog detector to detect pedestrians
 hog = cv2.HOGDescriptor()
@@ -31,4 +31,4 @@ for index, (x, y, w, h) in enumerate(boxes):
     )
 
 utils.display_multiple_window("pedestrians", [originalImage])
-utils.save_images("pedestrian-detection", "ped-detected", [originalImage])
+utils.save_images("pedestrian-detection", "street-detected", [originalImage])
