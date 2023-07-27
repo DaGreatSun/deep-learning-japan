@@ -35,3 +35,13 @@ def display_concatenated(name, images, alignment="h"):
     cv2.destroyAllWindows()
 
     return images
+
+
+def save_images(path, name, images):
+    images = images if isinstance(images, list) else [images]
+
+    if len(images) == 1:
+        cv2.imwrite(path + "/" + name + ".jpg", images[0])
+    else:
+        for index, image in enumerate(images):
+            cv2.imwrite(path + "/" + name + str(index + 1) + ".jpg", image)
