@@ -96,3 +96,16 @@ white = np.full([200, 200], 255, dtype=np.uint8)
 #     "Gamma 1.5 vs 0.5",
 #     [originalImage, imageGammaHigher, imageGammaLower],
 # )
+
+################################################
+# Drawing Rectangles
+################################################
+# poroImage = cv2.imread("poro.jpg", cv2.IMREAD_COLOR)
+# cv2.rectangle(
+#     poroImage, (0, 0), (poroImage.shape[1], poroImage.shape[0]), (0, 0, 255), 2
+# )
+# cv2.rectangle(poroImage, (140, 140), (270, 320), (0, 0, 255), 2)
+
+# cv2.putText(poroImage, "Poro", (140, 140), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 255), 2)
+
+# utils.display_concatenated("Poro", [poroImage])
