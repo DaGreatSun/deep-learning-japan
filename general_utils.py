@@ -1,4 +1,5 @@
 import cv2
+import matplotlib.pyplot as plt
 
 
 def display_multiple_window(name, images):
@@ -45,3 +46,14 @@ def save_images(path, name, images):
     else:
         for index, image in enumerate(images):
             cv2.imwrite(path + "/" + name + str(index + 1) + ".jpg", image)
+
+
+def mathplot_display_concatenated(name, images, alignment="h"):
+    if alignment == "v":
+        images = cv2.vconcat(images) if isinstance(images, list) else images
+    else:
+        images = cv2.hconcat(images) if isinstance(images, list) else images
+
+    plt.imshow(cv2.cvtColor(images, cv2.COLOR_BGR2RGB))
+
+    return images

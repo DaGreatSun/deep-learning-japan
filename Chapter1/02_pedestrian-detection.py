@@ -4,7 +4,7 @@ import time
 import sys
 
 sys.path.append("../")
-import utils
+import general_utils
 
 originalImage = cv2.imread("pedestrian-detection/street.jpg", cv2.IMREAD_COLOR)
 
@@ -30,5 +30,5 @@ for index, (x, y, w, h) in enumerate(boxes):
         2,
     )
 
-utils.display_multiple_window("pedestrians", [originalImage])
-utils.save_images("pedestrian-detection", "street-detected", [originalImage])
+general_utils.display_multiple_window("pedestrians", [originalImage])
+general_utils.save_images("pedestrian-detection", "street-detected", [originalImage])

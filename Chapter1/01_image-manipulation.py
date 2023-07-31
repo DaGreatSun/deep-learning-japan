@@ -5,7 +5,7 @@ import sys
 
 
 sys.path.append("../")
-import utils
+import general_utils
 
 originalImage = cv2.imread("test.jpg", cv2.IMREAD_COLOR)
 black = np.zeros([200, 200], dtype=np.uint8)
@@ -22,8 +22,8 @@ white = np.full([200, 200], 255, dtype=np.uint8)
 ################################################
 # Creating Images
 ################################################
-# utils.display_multiple_window(["Black", "White"], [black, white])
-# utils.display_concatenated("images", [black, white])
+# general_utils.display_multiple_window(["Black", "White"], [black, white])
+# general_utils.display_concatenated("images", [black, white])
 
 ################################################
 # Rows and Columns
@@ -31,21 +31,21 @@ white = np.full([200, 200], 255, dtype=np.uint8)
 # blackAlter = black.copy()
 # blackAlter[90:120, 90:120] = white[90:120, 90:120]
 # blackAlter[:, 20:40] = 100
-# utils.display_concatenated("Copy Region of Interest", blackAlter)
+# general_utils.display_concatenated("Copy Region of Interest", blackAlter)
 
 ################################################
 # Converting Color Images
 ################################################
 # imageGreyscaled = cv2.cvtColor(originalImage.copy(), cv2.COLOR_RGB2GRAY)
-# utils.display_concatenated("Copy Region of Interest", imageGreyscaled)
-# utils.display_concatenated("Copy Region of Interest", cv2.flip(imageGreyscaled, 1))
+# general_utils.display_concatenated("Copy Region of Interest", imageGreyscaled)
+# general_utils.display_concatenated("Copy Region of Interest", cv2.flip(imageGreyscaled, 1))
 
 ################################################
 # Chequered Board
 ################################################
 # row1 = cv2.hconcat([black, white, black, white])
 # row2 = cv2.hconcat([white, black, white, black])
-# utils.display_concatenated("Chequered Board", [row1, row2, row1, row2], "v")
+# general_utils.display_concatenated("Chequered Board", [row1, row2, row1, row2], "v")
 
 ################################################
 # Blurring & Time Taken
@@ -80,7 +80,7 @@ white = np.full([200, 200], 255, dtype=np.uint8)
 # cv2.convertScaleAbs(originalImage, less_contrast, 0.5, 0)
 # cv2.convertScaleAbs(originalImage, more_brightness, 1, 64)
 # cv2.convertScaleAbs(originalImage, less_brightness, 1, -64)
-# utils.display_concatenated(
+# general_utils.display_concatenated(
 #     "Convert Scale Abs",
 #     [originalImage, more_contrast, less_contrast, more_brightness, less_brightness],
 # )
@@ -90,7 +90,7 @@ white = np.full([200, 200], 255, dtype=np.uint8)
 # imageGammaHigher = np.array(255 * (originalImage / 255) ** (1 / Gamma), dtype=np.uint8)
 # Gamma = 0.2
 # imageGammaLower = np.array(255 * (originalImage / 255) ** (1 / Gamma), dtype=np.uint8)
-# utils.display_concatenated(
+# general_utils.display_concatenated(
 #     "Gamma 1.5 vs 0.5",
 #     [originalImage, imageGammaHigher, imageGammaLower],
 # )
@@ -106,4 +106,4 @@ white = np.full([200, 200], 255, dtype=np.uint8)
 
 # cv2.putText(poroImage, "Poro", (140, 140), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 255), 2)
 
-# utils.display_concatenated("Poro", [poroImage])
+# general_utils.display_concatenated("Poro", [poroImage])
